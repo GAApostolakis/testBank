@@ -1,0 +1,6 @@
+framework module Pods_TestBankInterface {
+  umbrella header "Pods-TestBankInterface-umbrella.h"
+
+  export *
+  module * { export * }
+}
