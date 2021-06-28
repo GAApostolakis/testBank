@@ -16,6 +16,7 @@
 		C827A2792686B1D700D29E98 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A2782686B1D700D29E98 /* AppCoordinator.swift */; };
 		C827A27E268943B800D29E98 /* RepositoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A27D268943B700D29E98 /* RepositoryAPI.swift */; };
 		C827A283268959A300D29E98 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A282268959A300D29E98 /* Repository.swift */; };
+		C827A2A626897C2000D29E98 /* StatementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A2A526897C2000D29E98 /* StatementsViewModel.swift */; };
 		C82AF0732682A03800AA1C42 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82AF0712682A03700AA1C42 /* LoginViewController.xib */; };
 		C82AF0742682A03800AA1C42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AF0722682A03700AA1C42 /* LoginViewController.swift */; };
 		C87CFC3E265E8AAC002FC3AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFC3D265E8AAC002FC3AF /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		C827A2782686B1D700D29E98 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C827A27D268943B700D29E98 /* RepositoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAPI.swift; sourceTree = "<group>"; };
 		C827A282268959A300D29E98 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C827A2A526897C2000D29E98 /* StatementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsViewModel.swift; sourceTree = "<group>"; };
 		C82AF0712682A03700AA1C42 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		C82AF0722682A03700AA1C42 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C87CFC3A265E8AAC002FC3AF /* TestBankInterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBankInterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,14 @@
 				C827A2782686B1D700D29E98 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C827A2A426897C0700D29E98 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				C827A2A526897C2000D29E98 /* StatementsViewModel.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		C87CFC31265E8AAC002FC3AF = {
@@ -269,6 +279,7 @@
 		C87CFE2C266FC5A2002FC3AF /* Statements */ = {
 			isa = PBXGroup;
 			children = (
+				C827A2A426897C0700D29E98 /* New Group */,
 				C87CFF66267CD4EB002FC3AF /* Model */,
 				C87CFF65267CD4E4002FC3AF /* Presenter */,
 				C87CFF5A267CD34F002FC3AF /* View */,
@@ -506,6 +517,7 @@
 				C827A27E268943B800D29E98 /* RepositoryAPI.swift in Sources */,
 				C827A26E2686B16D00D29E98 /* Coordinator.swift in Sources */,
 				C8D10CF02682AB600048759A /* TableViewCell.swift in Sources */,
+				C827A2A626897C2000D29E98 /* StatementsViewModel.swift in Sources */,
 				C87CFF70267CE3F4002FC3AF /* StatementsPresenter.swift in Sources */,
 				C87CFC3E265E8AAC002FC3AF /* AppDelegate.swift in Sources */,
 				C87CFC9F265EA73E002FC3AF /* UITextField.swift in Sources */,

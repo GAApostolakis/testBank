@@ -18,10 +18,19 @@ class StatementsViewController: UIViewController {
     let tableCellName = "TableViewCell"
     let tableCellIdentifier = "opCell"
     
-    var presenter : StatementsPresenter
+    var viewModel : StatementsViewModel
     
-    init(presenter: StatementsPresenter){
-        self.presenter = presenter
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.frame = UIScreen.main.bounds
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = UIColor.warmBlue
+        
+        return activityIndicator
+    }()
+    
+    init(viewModel: StatementsViewModel){
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,50 +40,67 @@ class StatementsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setClientInfoLabels()
-        presenter.requestStatements()
-        setUpTableView()
+        setupUI()
+        setupTableView()
+        setupBindings()
+        
+        viewModel.fetchStatements()
     }
     //MARK: - UIActions
     
     @IBAction func refreshPressed(_ sender: UIButton) {
-        presenter.requestStatements()
+        viewModel.fetchStatements()
     }
     
     @IBAction func logOutPressed(_ sender: UIButton) {
-        presenter.logOut()
+        viewModel.logOut()
     }
     //MARK: - Methods
     
-    func setClientInfoLabels() {
-        let viewData = presenter.clientInfoViewData
+    func setupUI() {
+        let clientViewData = viewModel.clientInfoViewData
+
+        nameLabel.text = clientViewData.name
+        accountNumberLabel.text = clientViewData.accNumber
+        balanceValueLabel.text = clientViewData.balanceValue
         
-        nameLabel.text = viewData.name
-        accountNumberLabel.text = viewData.accNumber
-        balanceValueLabel.text = viewData.balanceValue
+        view.addSubview(activityIndicator)
     }
     
-    func setUpTableView () {
+    func setupTableView () {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(
             UINib(nibName: tableCellName, bundle: nil),
             forCellReuseIdentifier: tableCellIdentifier)
     }
+    
+    func setupBindings() {
+        viewModel.didStartActivity = { [weak self] in
+            self?.activityIndicator.startAnimating()
+        }
+        
+        viewModel.didEndActivity = { [weak self] in
+            self?.activityIndicator.stopAnimating()
+        }
+        
+        viewModel.didLoadedStatements = { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
 }
 //MARK: - TableViewDataSource
 
 extension StatementsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let statementsViewData = presenter.statementsViewData
-        return statementsViewData.package.count
+        return viewModel.statementsViewData.package.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! TableViewCell
-        let statementsViewData = presenter.statementsViewData
+        let statementsViewData = viewModel.statementsViewData
         let content = statementsViewData.package[indexPath.row]
-        
+
         cell.operationTypeLabel.text = content.type
         cell.operationLabel.text = content.detail
         cell.valueDateLabel.text = content.date
@@ -86,17 +112,5 @@ extension StatementsViewController: UITableViewDataSource {
 extension StatementsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95.0
-    }
-}
-
-extension StatementsViewController: StatementsPresenterOutput {
-    func displayconnectionError(e: String) {
-        let alert = UIAlertController(title: "Error:", message: e, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func reloadData() {
-        tableView.reloadData()
     }
 }

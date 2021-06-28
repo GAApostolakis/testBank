@@ -25,13 +25,12 @@ class AppCoordinator: Coordinator {
     }
     func showStatementsScreen(clientInfo: LoginModel) {
         let repository = RepositoryAPI()
-        let presenter = StatementsPresenterImpl(
+        let viewModel = StatementsViewModelImpl(
             coordinator: self,
             repository: repository,
-            clientInfo: clientInfo
+            loginModel: clientInfo
         )
-        let statementsVC = StatementsViewController(presenter: presenter)
-        presenter.statementsVC = statementsVC
+        let statementsVC = StatementsViewController(viewModel: viewModel)
         
         statementsVC.modalTransitionStyle = .crossDissolve
         statementsVC.modalPresentationStyle = .overFullScreen
