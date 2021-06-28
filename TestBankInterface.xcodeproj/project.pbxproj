@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		BA178AA19F6077C7773B2331 /* Pods_TestBankInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30E0F7EDBFF9A665B464E6 /* Pods_TestBankInterface.framework */; };
+		C827A23A26856BEB00D29E98 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A23926856BEB00D29E98 /* LoginPresenter.swift */; };
+		C827A24D26856FAD00D29E98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A24C26856FAD00D29E98 /* Color.swift */; };
+		C827A25D2686310E00D29E98 /* ClietInfoViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A25C2686310E00D29E98 /* ClietInfoViewData.swift */; };
+		C827A2622686311600D29E98 /* StatementsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A2612686311600D29E98 /* StatementsViewData.swift */; };
+		C827A26E2686B16D00D29E98 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A26D2686B16D00D29E98 /* Coordinator.swift */; };
+		C827A2792686B1D700D29E98 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A2782686B1D700D29E98 /* AppCoordinator.swift */; };
+		C827A27E268943B800D29E98 /* RepositoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A27D268943B700D29E98 /* RepositoryAPI.swift */; };
+		C827A283268959A300D29E98 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827A282268959A300D29E98 /* Repository.swift */; };
 		C82AF0732682A03800AA1C42 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C82AF0712682A03700AA1C42 /* LoginViewController.xib */; };
 		C82AF0742682A03800AA1C42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AF0722682A03700AA1C42 /* LoginViewController.swift */; };
 		C87CFC3E265E8AAC002FC3AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFC3D265E8AAC002FC3AF /* AppDelegate.swift */; };
@@ -19,9 +27,8 @@
 		C87CFC9F265EA73E002FC3AF /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFC9E265EA73E002FC3AF /* UITextField.swift */; };
 		C87CFD66265FF6C4002FC3AF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFD65265FF6C4002FC3AF /* UIViewController.swift */; };
 		C87CFD96266A6372002FC3AF /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFD95266A6372002FC3AF /* LoginModel.swift */; };
-		C87CFDB2266AAA7B002FC3AF /* TargetBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFDB1266AAA7B002FC3AF /* TargetBank.swift */; };
+		C87CFDB2266AAA7B002FC3AF /* BankTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFDB1266AAA7B002FC3AF /* BankTarget.swift */; };
 		C87CFDB7266AABF2002FC3AF /* StatementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFDB6266AABF2002FC3AF /* StatementsModel.swift */; };
-		C87CFE23266D1DA8002FC3AF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFE22266D1DA8002FC3AF /* LoginPresenter.swift */; };
 		C87CFE28266D53EC002FC3AF /* CodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFE27266D53EC002FC3AF /* CodableResponse.swift */; };
 		C87CFE30266FC5B6002FC3AF /* StatementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87CFE2E266FC5B6002FC3AF /* StatementsViewController.xib */; };
 		C87CFF6B267CD904002FC3AF /* StatementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CFF6A267CD904002FC3AF /* StatementsViewController.swift */; };
@@ -51,6 +58,14 @@
 		43C5C521105DA3119AFFB443 /* Pods-TestBankInterface.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestBankInterface.debug.xcconfig"; path = "Target Support Files/Pods-TestBankInterface/Pods-TestBankInterface.debug.xcconfig"; sourceTree = "<group>"; };
 		78DC76C82339EB5CA7AACB42 /* Pods-TestBankInterface.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestBankInterface.release.xcconfig"; path = "Target Support Files/Pods-TestBankInterface/Pods-TestBankInterface.release.xcconfig"; sourceTree = "<group>"; };
 		8E30E0F7EDBFF9A665B464E6 /* Pods_TestBankInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestBankInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C827A23926856BEB00D29E98 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		C827A24C26856FAD00D29E98 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C827A25C2686310E00D29E98 /* ClietInfoViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClietInfoViewData.swift; sourceTree = "<group>"; };
+		C827A2612686311600D29E98 /* StatementsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsViewData.swift; sourceTree = "<group>"; };
+		C827A26D2686B16D00D29E98 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C827A2782686B1D700D29E98 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C827A27D268943B700D29E98 /* RepositoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAPI.swift; sourceTree = "<group>"; };
+		C827A282268959A300D29E98 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C82AF0712682A03700AA1C42 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		C82AF0722682A03700AA1C42 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C87CFC3A265E8AAC002FC3AF /* TestBankInterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBankInterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,9 +83,8 @@
 		C87CFC9E265EA73E002FC3AF /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C87CFD65265FF6C4002FC3AF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C87CFD95266A6372002FC3AF /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		C87CFDB1266AAA7B002FC3AF /* TargetBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetBank.swift; sourceTree = "<group>"; };
+		C87CFDB1266AAA7B002FC3AF /* BankTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankTarget.swift; sourceTree = "<group>"; };
 		C87CFDB6266AABF2002FC3AF /* StatementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsModel.swift; sourceTree = "<group>"; };
-		C87CFE22266D1DA8002FC3AF /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C87CFE27266D53EC002FC3AF /* CodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableResponse.swift; sourceTree = "<group>"; };
 		C87CFE2E266FC5B6002FC3AF /* StatementsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementsViewController.xib; sourceTree = "<group>"; };
 		C87CFF6A267CD904002FC3AF /* StatementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatementsViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +136,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C827A26C2686B09E00D29E98 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C827A26D2686B16D00D29E98 /* Coordinator.swift */,
+				C827A2782686B1D700D29E98 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		C87CFC31265E8AAC002FC3AF = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +170,7 @@
 		C87CFC3C265E8AAC002FC3AF /* TestBankInterface */ = {
 			isa = PBXGroup;
 			children = (
+				C827A26C2686B09E00D29E98 /* Coordinator */,
 				C87CFD8F266A5E7D002FC3AF /* Networking */,
 				C87CFC8F265E8F86002FC3AF /* Screens */,
 				C87CFC83265E8EC9002FC3AF /* Extensions */,
@@ -196,7 +220,7 @@
 		C87CFC75265E8AD5002FC3AF /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				C87CFE22266D1DA8002FC3AF /* LoginPresenter.swift */,
+				C827A23926856BEB00D29E98 /* LoginPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -204,6 +228,7 @@
 		C87CFC83265E8EC9002FC3AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C827A24C26856FAD00D29E98 /* Color.swift */,
 				C87CFC84265E8EDC002FC3AF /* UIColor.swift */,
 				C87CFC9E265EA73E002FC3AF /* UITextField.swift */,
 				C87CFD65265FF6C4002FC3AF /* UIViewController.swift */,
@@ -233,8 +258,10 @@
 		C87CFD8F266A5E7D002FC3AF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C87CFDB1266AAA7B002FC3AF /* TargetBank.swift */,
+				C87CFDB1266AAA7B002FC3AF /* BankTarget.swift */,
 				C87CFE27266D53EC002FC3AF /* CodableResponse.swift */,
+				C827A27D268943B700D29E98 /* RepositoryAPI.swift */,
+				C827A282268959A300D29E98 /* Repository.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -287,7 +314,9 @@
 		C87CFF66267CD4EB002FC3AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C827A25C2686310E00D29E98 /* ClietInfoViewData.swift */,
 				C87CFDB6266AABF2002FC3AF /* StatementsModel.swift */,
+				C827A2612686311600D29E98 /* StatementsViewData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,17 +496,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C827A23A26856BEB00D29E98 /* LoginPresenter.swift in Sources */,
 				C82AF0742682A03800AA1C42 /* LoginViewController.swift in Sources */,
-				C87CFE23266D1DA8002FC3AF /* LoginPresenter.swift in Sources */,
 				C87CFD96266A6372002FC3AF /* LoginModel.swift in Sources */,
-				C87CFDB2266AAA7B002FC3AF /* TargetBank.swift in Sources */,
+				C87CFDB2266AAA7B002FC3AF /* BankTarget.swift in Sources */,
+				C827A25D2686310E00D29E98 /* ClietInfoViewData.swift in Sources */,
 				C87CFDB7266AABF2002FC3AF /* StatementsModel.swift in Sources */,
+				C827A24D26856FAD00D29E98 /* Color.swift in Sources */,
+				C827A27E268943B800D29E98 /* RepositoryAPI.swift in Sources */,
+				C827A26E2686B16D00D29E98 /* Coordinator.swift in Sources */,
 				C8D10CF02682AB600048759A /* TableViewCell.swift in Sources */,
 				C87CFF70267CE3F4002FC3AF /* StatementsPresenter.swift in Sources */,
 				C87CFC3E265E8AAC002FC3AF /* AppDelegate.swift in Sources */,
 				C87CFC9F265EA73E002FC3AF /* UITextField.swift in Sources */,
+				C827A2622686311600D29E98 /* StatementsViewData.swift in Sources */,
+				C827A283268959A300D29E98 /* Repository.swift in Sources */,
 				C87CFC85265E8EDC002FC3AF /* UIColor.swift in Sources */,
 				C87CFE28266D53EC002FC3AF /* CodableResponse.swift in Sources */,
+				C827A2792686B1D700D29E98 /* AppCoordinator.swift in Sources */,
 				C87CFD66265FF6C4002FC3AF /* UIViewController.swift in Sources */,
 				C87CFC40265E8AAC002FC3AF /* SceneDelegate.swift in Sources */,
 				C87CFF6B267CD904002FC3AF /* StatementsViewController.swift in Sources */,

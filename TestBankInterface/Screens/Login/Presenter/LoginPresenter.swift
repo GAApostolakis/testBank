@@ -4,24 +4,27 @@
 //
 //  Created by George de Araújo Apostolakis on 27/05/21.
 //
-//MARK: - Imports
+
 import UIKit
 import Moya
 
-//MARK: - Class
-class LoginPresenter {
-    
-    var clientInfo: LoginModel?
-    var error: String?
-    let provider = MoyaProvider<TargetBank>()
-    
+protocol LoginPresenterProtocol {
+    func validateCredentials(login: String, password: String, Mode: Int) -> Bool
+    func requestLogin()
+}
+
+class LoginPresenter: LoginPresenterProtocol {
+    //MARK: - Variables
+
+    var repository: Repository
+    var coordinator: Coordinator
     var loginVC: LoginViewController?
-    var statementVC = StatementsViewController()
-    
-    let invalidLogin = "* Invalid Login, please use a CPF or E-mail!"
-    let invalidPassword = "* Password should have at least one uppercase letter, one special character and one alphanumeric character."
     let connectionError = "Error connecting to the server"
     
+    init (coordinator: Coordinator, repository: Repository) {
+        self.coordinator = coordinator
+        self.repository = repository
+    }
     //MARK: - Is Valid Email Format?
     
     func isValidEmail(_ email: String) -> Bool {
@@ -30,8 +33,6 @@ class LoginPresenter {
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
-    
-    
     //MARK: - Is Valid CPF Format?
     
     func isValidCPF(_ cpf: String) -> Bool {
@@ -46,7 +47,6 @@ class LoginPresenter {
             return cpfPred.evaluate(with: cpf)
         }
     }
-    
     //MARK: - Is Valid Password Format?
     
     func isValidPassword (_ password: String) -> Bool{
@@ -64,37 +64,20 @@ class LoginPresenter {
         
         return upperCase && alphaNumeric && specialCharacter
     }
-    
-    
     //MARK: - resquestLoguin
     
-    func requestLogin (){
-        
-        var feedback: String?
-        
-        provider.request(.login) { result in
-            
-            switch result {
-            case .success (let response):
-                do {
-                    self.clientInfo = try response.map(LoginModel.self)
-                    feedback = ""
-                    print("Loguin Request was a Sucess!")
-                    self.statementVC.statementsPresenter.clientInfo = self.clientInfo
-                    self.loginVC?.present(self.statementVC, animated: true)
-                    
-                } catch {
-                    feedback = error.localizedDescription.description
-                    print(feedback!)
-                }
-            case .failure:
-                feedback = "Server unavailable"
-                print(feedback!)
-            }
-        }
+    func requestLogin(){
+//        repository.performLogin {[weak self](clientInfo) in
+//        }{[weak self](feedback) in
+//        }
+        repository.performLogin(sucessHandler: {[weak self]clientInfo in
+            self?.coordinator.showStatementsScreen(clientInfo: clientInfo)
+        }, errorHandler: {[weak self]e in
+            self?.loginVC?.displayconnectionError(e: e)
+        })
     }
-    
-    //MARK: - longuinAtempt
+
+    //MARK: - validateCredentials
     
     func validateCredentials(login: String, password: String, Mode: Int) -> Bool {
         
@@ -103,14 +86,14 @@ class LoginPresenter {
             if isValidCPF(login)||isValidEmail(login) {
                 return true
             } else{
-                loginVC?.errorDisplay.text = invalidLogin
+                loginVC?.displayError(msgError: "", displayError: Mode)
                 return false
             }
         case 2:
             if isValidPassword(password) {
                 return true
             } else {
-                loginVC?.errorDisplayII.text = invalidPassword
+                loginVC?.displayError(msgError: "", displayError: Mode)
                 return false
             }
         case 3:
@@ -118,18 +101,17 @@ class LoginPresenter {
                 if isValidPassword(password) {
                     return true
                 } else {
-                    loginVC?.errorDisplayII.text = invalidPassword
+                    loginVC?.displayError(msgError: "", displayError: 2)
                     return false
                 }
             } else{
-                loginVC?.errorDisplay.text = invalidLogin
+                loginVC?.displayError(msgError: "", displayError: 1)
                 return false
             }
         default:
             print("TextField Login Screen Unexpected TAG.")
             return false
         }
-        
     }
-    
 }
+

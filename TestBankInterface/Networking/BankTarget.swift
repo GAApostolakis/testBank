@@ -4,19 +4,15 @@
 //
 //  Created by George de Araújo Apostolakis on 04/06/21.
 //
-
-import Foundation
-
 import Moya
 
-public enum TargetBank {
+public enum BankTarget {
     case login
     case statements
 }
-
 //MARK: - BankTarget
 
-extension TargetBank: TargetType {
+extension BankTarget: TargetType {
     
     public var baseURL: URL {
         switch self {

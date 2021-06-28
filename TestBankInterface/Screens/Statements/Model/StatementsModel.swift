@@ -4,15 +4,11 @@
 //
 //  Created by George de Araújo Apostolakis on 04/06/21.
 //
-
-import Foundation
-
 struct StatementsModel: Codable {
-    
-    let statement: [ID]
+    let statement: [Op]
 }
 
-struct ID: Codable {
+struct Op: Codable {
     let id: Int
     let type: String
     let date: String
