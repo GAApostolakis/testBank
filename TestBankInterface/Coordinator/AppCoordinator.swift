@@ -16,10 +16,9 @@ class AppCoordinator: Coordinator {
     }
     func start() {
         let repository = RepositoryAPI()
-        let presenter = LoginPresenter(coordinator: self, repository: repository)
-        let login = LoginViewController(presenter: presenter)
+        let viewModel = LoginViewModelImp1(coordinator: self, repository: repository)
+        let login = LoginViewController(viewModel: viewModel)
         currentVC = login
-        presenter.loginVC = login
         window.rootViewController = login
         window.makeKeyAndVisible()
     }

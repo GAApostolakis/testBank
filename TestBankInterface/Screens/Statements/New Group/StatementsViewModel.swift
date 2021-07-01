@@ -13,6 +13,7 @@ protocol StatementsViewModel {
     var didStartActivity: (() -> Void)? { get set }
     var didEndActivity: (() -> Void)? { get set }
     var didLoadedStatements: (() -> Void)? { get set }
+    var didFailedFetchStatements: ((String) -> Void)? { get set }
     
     var clientInfoViewData: ClientInfoViewData { get }
     var statementsViewData: StatementsViewData { get }
@@ -25,11 +26,13 @@ protocol StatementsViewModel {
 
 final class StatementsViewModelImpl: StatementsViewModel {
     
+    
     //MARK: - Events
     
     var didStartActivity: (() -> Void)?
     var didEndActivity: (() -> Void)?
     var didLoadedStatements: (() -> Void)?
+    var didFailedFetchStatements: ((String) -> Void)?
     
     //MARK: - Properties
     
@@ -77,6 +80,7 @@ final class StatementsViewModelImpl: StatementsViewModel {
             self?.statementsModel = statementsModel
             self?.didLoadedStatements?()
         } errorHandler: { [weak self] errorMessage in
+            self?.didFailedFetchStatements?(errorMessage)
             self?.didEndActivity?()
         }
 
